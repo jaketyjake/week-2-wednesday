@@ -3,6 +3,7 @@ import os
 from time import gmtime, strftime, localtime
 import time
 import datetime
+from colorama import Fore, Back, Style
 
 from datetime import datetime
 #time_one = time.time()
@@ -27,7 +28,7 @@ total_time = ()
 
 hourly_rate = 10
 minute_rate = 10/60
-minute_rate = 10/60/60
+second_rate = 10/60/60
 
 def main():
 
@@ -38,7 +39,7 @@ def main():
     if table_status == table_open:
         print(f" Table {table_number} is AVAILABLE")
     elif table_status == table_closed:
-        print(f" Table {table_number} is {table_status} since {start_read}")
+        print(f" Table {table_number} is {Fore.RED}{table_status}{Style.RESET_ALL} since {start_read}")
     print("\n")
     print("SELECT AN OPTION FROM BELOW")
     print(" 1 - Start Session")
